@@ -1,0 +1,35 @@
+---
+import Card from "../ui/Card.astro";
+import HackclubIcon from "../ui/HackclubIcon.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import type { ActivityItem } from "../../types/event";
+
+interface Props {
+  id?: string;
+  activities: ActivityItem[];
+  defaultActivities: ActivityItem[];
+  title: string;
+  subtitle: string;
+}
+
+const { id = "activities", activities, defaultActivities, title, subtitle } = Astro.props as Props;
+const activityItems = activities.length > 0 ? activities : defaultActivities;
+---
+
+<section id={id} class="px-4 py-14 md:px-6 md:py-20">
+  <div class="mx-auto w-full max-w-6xl">
+    <SectionHeading title={title} subtitle={subtitle} />
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {activityItems.map((item) => (
+        <Card>
+          <div class="mb-4 inline-flex rounded-xl border border-white/20 bg-darker p-3">
+            <HackclubIcon glyph={item.icon} label={item.title} size={28} />
+          </div>
+          <h3 class="mb-2 text-2xl uppercase text-white">{item.title}</h3>
+          <p class="text-light/90">{item.description}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

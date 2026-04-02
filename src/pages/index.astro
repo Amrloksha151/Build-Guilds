@@ -1,11 +1,108 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Base from "../layouts/Base.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
+import Hero from "../components/sections/Hero.astro";
+import About from "../components/sections/About.astro";
+import Partners from "../components/sections/Partners.astro";
+import Schedule from "../components/sections/Schedule.astro";
+import Activities from "../components/sections/Activities.astro";
+import Venue from "../components/sections/Venue.astro";
+import FAQ from "../components/sections/FAQ.astro";
+import SignupForm from "../components/sections/SignupForm.astro";
+import eventContentRaw from "../content/event.json";
+import type { EventContent } from "../types/event";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const eventContent = eventContentRaw as EventContent;
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<Base title={eventContent.event.name} description={eventContent.event.description}>
+	<Navbar eventName={eventContent.event.name} navItems={eventContent.navigation} />
+
+	<main>
+		<Hero
+			eventName={eventContent.event.name}
+			tagline={eventContent.event.tagline}
+			eyebrow={eventContent.hero.eyebrow}
+			date={eventContent.event.date}
+			time={eventContent.event.time}
+			primaryCtaLabel={eventContent.hero.primaryCtaLabel}
+			primaryCtaHref={eventContent.hero.primaryCtaHref}
+			secondaryCtaLabel={eventContent.hero.secondaryCtaLabel}
+			secondaryCtaHref={eventContent.hero.secondaryCtaHref}
+			comingSoonLabel={eventContent.sections.fallbacks.comingSoon}
+		/>
+
+		<hr class="blueprint-divider mx-auto w-[min(92%,72rem)]" />
+
+		<About
+			id="about"
+			title={eventContent.about.title}
+			intro={eventContent.about.intro}
+			details={eventContent.about.details}
+			organizerFlowTitle={eventContent.about.organizerFlowTitle}
+			organizerSteps={eventContent.about.organizerSteps}
+		/>
+
+		<Partners
+			id="partners"
+			organizers={eventContent.organizers}
+			eyebrow={eventContent.sections.partners.eyebrow}
+			title={eventContent.sections.partners.title}
+			subtitle={eventContent.sections.partners.subtitle}
+		/>
+		<Schedule
+			id="schedule"
+			schedule={eventContent.schedule}
+			title={eventContent.sections.schedule.title}
+			subtitle={eventContent.sections.schedule.subtitle}
+		/>
+		<Activities
+			id="activities"
+			activities={eventContent.activities}
+			defaultActivities={eventContent.defaultActivities}
+			title={eventContent.sections.activities.title}
+			subtitle={eventContent.sections.activities.subtitle}
+		/>
+
+		<Venue
+			id="venue"
+			title={eventContent.sections.venue.title}
+			subtitle={eventContent.sections.venue.subtitle}
+			venueName={eventContent.event.venue.name}
+			address={eventContent.event.venue.address}
+			city={eventContent.event.venue.city}
+			governorate={eventContent.event.venue.governorate}
+			country={eventContent.event.venue.country}
+			mapEmbedUrl={eventContent.event.venue.mapEmbedUrl}
+			venueTBALabel={eventContent.sections.fallbacks.venueTBA}
+			addressTBALabel={eventContent.sections.fallbacks.addressTBA}
+			mapPlaceholder={eventContent.sections.venue.mapPlaceholder}
+		/>
+
+		<FAQ
+			id="faq"
+			faq={eventContent.faq}
+			title={eventContent.sections.faq.title}
+			subtitle={eventContent.sections.faq.subtitle}
+		/>
+
+		<SignupForm
+			id="signup"
+			registrationOpen={eventContent.event.registrationOpen}
+			registrationUrl={eventContent.event.registrationUrl}
+			title={eventContent.signup.title}
+			description={eventContent.signup.description}
+			notifyTitle={eventContent.signup.notifyTitle}
+			notifyDescription={eventContent.signup.notifyDescription}
+			buttonLabel={eventContent.signup.buttonLabel}
+			placeholder={eventContent.signup.placeholder}
+		/>
+	</main>
+
+	<Footer
+		organizers={eventContent.organizers}
+		credit={eventContent.footer.credit}
+		links={eventContent.footer.links}
+	/>
+</Base>

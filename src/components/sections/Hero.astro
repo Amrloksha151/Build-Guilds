@@ -1,0 +1,54 @@
+---
+import Badge from "../ui/Badge.astro";
+import Button from "../ui/Button.astro";
+
+interface Props {
+  eventName: string;
+  tagline: string;
+  eyebrow: string;
+  date: string | null;
+  time: string | null;
+  primaryCtaLabel: string;
+  primaryCtaHref: string;
+  secondaryCtaLabel: string;
+  secondaryCtaHref: string;
+  comingSoonLabel: string;
+}
+
+const {
+  eventName,
+  tagline,
+  eyebrow,
+  date,
+  time,
+  primaryCtaLabel,
+  primaryCtaHref,
+  secondaryCtaLabel,
+  secondaryCtaHref,
+  comingSoonLabel
+} = Astro.props as Props;
+
+const dateLabel = date ?? comingSoonLabel;
+const timeLabel = time ?? comingSoonLabel;
+---
+
+<section class="relative overflow-hidden px-4 pb-14 pt-16 md:px-6 md:pt-24">
+  <div class="mx-auto flex w-full max-w-6xl flex-col gap-8">
+    <p class="font-sans text-sm font-bold uppercase tracking-[0.12em] text-warning">{eyebrow}</p>
+
+    <div class="space-y-5">
+      <h1 class="text-5xl uppercase leading-[0.95] text-white md:text-7xl">{eventName}</h1>
+      <p class="max-w-3xl text-lg text-light/95 md:text-xl">{tagline}</p>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-3">
+      <Badge label={`Date: ${dateLabel}`} variant={date ? "neutral" : "warning"} />
+      <Badge label={`Time: ${timeLabel}`} variant={time ? "neutral" : "warning"} />
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <Button href={primaryCtaHref} size="lg">{primaryCtaLabel}</Button>
+      <Button href={secondaryCtaHref} variant="outline" size="lg">{secondaryCtaLabel}</Button>
+    </div>
+  </div>
+</section>

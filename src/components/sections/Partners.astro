@@ -1,0 +1,39 @@
+---
+import Card from "../ui/Card.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import GharbiyaSTEMHackClubLogo from "../ui/GharbiyaSTEMHackClubLogo.astro";
+import GharbiyaSTEMRoboClubLogo from "../ui/GharbiyaSTEMRoboClubLogo.astro";
+import type { Organizer } from "../../types/event";
+
+interface Props {
+  id?: string;
+  organizers: Organizer[];
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+}
+
+const { id = "partners", organizers, eyebrow, title, subtitle } = Astro.props as Props;
+---
+
+<section id={id} class="px-4 py-14 md:px-6 md:py-20">
+  <div class="mx-auto w-full max-w-6xl">
+    <SectionHeading
+      eyebrow={eyebrow}
+      title={title}
+      subtitle={subtitle}
+    />
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {organizers.map((organizer) => (
+        <Card>
+          <div class="mb-5">
+            {organizer.id === "hackclub-gharbiya" ? <GharbiyaSTEMHackClubLogo /> : <GharbiyaSTEMRoboClubLogo />}
+          </div>
+          <h3 class="mb-2 text-2xl uppercase text-white">{organizer.name}</h3>
+          <p class="text-light/90">{organizer.description}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,112 @@
+@import url("https://css.hackclub.com/theme.css");
+@import "tailwindcss";
+
+@font-face {
+	font-family: "RC Guidelines";
+	src: local("R&C Guidelines"), url("/fonts/R&C-Demo.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "RC Guidelines Dark";
+	src: local("R&C Guidelines"), url("/fonts/R&C-Demo.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "RC Guidelines Light";
+	src: local("R&C Guidelines"), url("/fonts/R&C-Demo.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "RC Guidelines Empty";
+	src: local("R&C Guidelines"), url("/fonts/R&C-Demo.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Phantom Sans";
+	src: url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2") format("woff2"),
+		url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Phantom Sans";
+	src: url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff2") format("woff2"),
+		url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff") format("woff");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Phantom Sans";
+	src: url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff2") format("woff2"),
+		url("https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--bp-dark: #0e305b;
+	--bp-darker: #081c35;
+	--bp-light: #dbe4ee;
+	--bp-danger: #fe8e86;
+	--bp-warning: #ffc857;
+	--bp-success: #a8f0ae;
+}
+
+@layer base {
+	html,
+	body {
+		margin: 0;
+		min-height: 100%;
+	}
+
+	body {
+		font-family: "Phantom Sans", system-ui, sans-serif;
+		background-color: var(--bp-dark);
+		color: #fff;
+		line-height: 1.6;
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+			radial-gradient(circle at 10% 10%, rgba(255, 200, 87, 0.12), transparent 35%),
+			radial-gradient(circle at 90% 90%, rgba(168, 240, 174, 0.08), transparent 35%);
+		background-size: 32px 32px, 32px 32px, auto, auto;
+	}
+
+	h1,
+	h2 {
+		font-family: "RC Guidelines", sans-serif;
+		letter-spacing: 0.04em;
+	}
+
+	h3 {
+		font-family: "RC Guidelines Dark", sans-serif;
+		letter-spacing: 0.03em;
+	}
+}
+
+.blueprint-card {
+	background: color-mix(in oklab, var(--bp-darker) 92%, black 8%);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.blueprint-divider {
+	border: 0;
+	border-top: 1px dashed rgba(255, 255, 255, 0.28);
+}

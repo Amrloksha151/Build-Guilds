@@ -1,0 +1,42 @@
+---
+import Card from "../ui/Card.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+interface Props {
+  id?: string;
+  title: string;
+  intro: string;
+  details: string;
+  organizerFlowTitle: string;
+  organizerSteps: string[];
+}
+
+const { id = "about", title, intro, details, organizerFlowTitle, organizerSteps } =
+  Astro.props as Props;
+---
+
+<section id={id} class="px-4 py-14 md:px-6 md:py-20">
+  <div class="mx-auto w-full max-w-6xl">
+    <SectionHeading title={title} subtitle={intro} />
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      <Card>
+        <p class="text-light/90">{details}</p>
+      </Card>
+
+      <Card>
+        <h3 class="mb-4 text-2xl uppercase text-white">{organizerFlowTitle}</h3>
+        <ol class="space-y-3 text-light/90">
+          {organizerSteps.map((step, index) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-warning/60 text-xs font-bold text-warning">
+                {index + 1}
+              </span>
+              <span>{step}</span>
+            </li>
+          ))}
+        </ol>
+      </Card>
+    </div>
+  </div>
+</section>

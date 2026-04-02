@@ -1,0 +1,14 @@
+---
+interface Props {
+  glyph: string;
+  label: string;
+  color?: string;
+  size?: number;
+}
+
+const { glyph, label, color = "white", size = 32 } = Astro.props as Props;
+const safeColor = color.replace("#", "0x");
+const src = `https://icons.hackclub.com/api/icons/${safeColor}/${glyph}.svg`;
+---
+
+<img src={src} width={size} height={size} alt={label} loading="lazy" decoding="async" />

@@ -1,0 +1,59 @@
+---
+import Button from "../ui/Button.astro";
+import Card from "../ui/Card.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+interface Props {
+  id?: string;
+  registrationOpen: boolean;
+  registrationUrl: string | null;
+  title: string;
+  description: string;
+  notifyTitle: string;
+  notifyDescription: string;
+  buttonLabel: string;
+  placeholder: string;
+}
+
+const {
+  id = "signup",
+  registrationOpen,
+  registrationUrl,
+  title,
+  description,
+  notifyTitle,
+  notifyDescription,
+  buttonLabel,
+  placeholder
+} = Astro.props as Props;
+---
+
+<section id={id} class="px-4 py-14 md:px-6 md:py-20">
+  <div class="mx-auto w-full max-w-6xl">
+    <SectionHeading title={title} subtitle={description} />
+
+    <Card className="max-w-2xl">
+      {registrationOpen && registrationUrl ? (
+        <div class="space-y-4">
+          <p class="text-light/90">Registration is live. Continue to the external form.</p>
+          <Button href={registrationUrl} size="lg">Open Registration</Button>
+        </div>
+      ) : (
+        <div class="space-y-4">
+          <h3 class="text-2xl uppercase text-white">{notifyTitle}</h3>
+          <p class="text-light/90">{notifyDescription}</p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <input
+              type="email"
+              placeholder={placeholder}
+              class="w-full rounded-full border border-white/30 bg-darker px-5 py-3 text-white placeholder:text-light/60 focus:border-warning focus:outline-none"
+              aria-label="Email address"
+            />
+            <Button type="button" size="lg">{buttonLabel}</Button>
+          </div>
+          <p class="text-xs text-light/70">Static marketing mode: connect this field to your preferred external form when ready.</p>
+        </div>
+      )}
+    </Card>
+  </div>
+</section>

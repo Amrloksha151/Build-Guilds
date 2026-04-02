@@ -1,0 +1,125 @@
+{
+  "event": {
+    "name": "Tanta Build Guild",
+    "tagline": "The local hardware meetup for builders in Tanta.",
+    "description": "A one-day Build Guild experience in Tanta where Hack Clubbers meet, build hardware projects, and learn from each other.",
+    "date": null,
+    "time": null,
+    "venue": {
+      "name": null,
+      "address": null,
+      "city": "Tanta",
+      "governorate": "Gharbia",
+      "country": "Egypt",
+      "mapEmbedUrl": null
+    },
+    "registrationOpen": false,
+    "registrationUrl": null
+  },
+  "navigation": [
+    { "id": "about", "label": "About" },
+    { "id": "partners", "label": "Partners" },
+    { "id": "activities", "label": "Activities" },
+    { "id": "venue", "label": "Venue" },
+    { "id": "signup", "label": "Join" }
+  ],
+  "sections": {
+    "schedule": {
+      "title": "Event Timeline",
+      "subtitle": "A simple agenda for the day. Edit entries in event.json whenever details change."
+    },
+    "activities": {
+      "title": "What To Expect",
+      "subtitle": "Plan your guild with this section as your editable activity showcase."
+    },
+    "partners": {
+      "eyebrow": "Co-Organizers",
+      "title": "Built By Local Clubs",
+      "subtitle": "This guild is co-organized by student clubs in Gharbiya STEM School."
+    },
+    "venue": {
+      "title": "Venue",
+      "subtitle": "Location details for Tanta Build Guild.",
+      "mapPlaceholder": "Map embed will appear here when venue details are finalized."
+    },
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "Quick answers for attendees and organizers."
+    },
+    "fallbacks": {
+      "comingSoon": "Coming Soon",
+      "venueTBA": "Venue to be announced",
+      "addressTBA": "Address details are coming soon."
+    }
+  },
+  "hero": {
+    "eyebrow": "Blueprint by Hack Club",
+    "primaryCtaLabel": "Get Notified",
+    "primaryCtaHref": "#signup",
+    "secondaryCtaLabel": "Explore Guild Details",
+    "secondaryCtaHref": "#about"
+  },
+  "about": {
+    "title": "What Is A Build Guild?",
+    "intro": "Build Guilds are local hardware meetups organized by students, where each city creates its own style of workshops, demos, and project time.",
+    "details": "Our Tanta guild is a collaboration between Gharbiya STEM Hack Club and Gharbiya STEM Robo Club, designed to connect builders across the city and celebrate practical engineering.",
+    "organizerFlowTitle": "How Organizing Works",
+    "organizerSteps": [
+      "Start your guild and coordinate with fellow organizers.",
+      "Pick a date, venue, and format that fits your local community.",
+      "Plan activities, logistics, and safety details.",
+      "Gather attendees and run an unforgettable build day."
+    ]
+  },
+  "organizers": [
+    {
+      "id": "hackclub-gharbiya",
+      "name": "Gharbiya STEM Hack Club",
+      "description": "The Hack Club chapter at Gharbiya STEM School co-leading the local guild experience.",
+      "logoAsset": null,
+      "url": null
+    },
+    {
+      "id": "robo-gharbiya",
+      "name": "Gharbiya STEM Robo Club",
+      "description": "The robotics club at Gharbiya STEM School helping shape activities and logistics.",
+      "logoAsset": null,
+      "url": null
+    }
+  ],
+  "schedule": [],
+  "activities": [],
+  "defaultActivities": [
+    {
+      "icon": "hardware",
+      "title": "Hands-On Build Time",
+      "description": "Collaborative project sessions focused on hardware prototypes and experiments."
+    },
+    {
+      "icon": "bolt",
+      "title": "Lightning Showcases",
+      "description": "Short demos where members present what they built and how it works."
+    },
+    {
+      "icon": "clubs",
+      "title": "Community Circles",
+      "description": "Meet other student builders in Tanta and form teams for future projects."
+    }
+  ],
+  "faq": [],
+  "signup": {
+    "title": "Sign Up To Attend",
+    "description": "Registrations are not open yet. Leave your email to get notified when spots are announced.",
+    "notifyTitle": "Get Notified",
+    "notifyDescription": "This is a static placeholder for now. Replace with your external form link when registration opens.",
+    "buttonLabel": "Notify Me",
+    "placeholder": "you@example.com"
+  },
+  "footer": {
+    "credit": "Built with Blueprint spirit by students in Tanta.",
+    "links": [
+      { "label": "Hack Club", "href": "https://hackclub.com" },
+      { "label": "Build Guilds", "href": "https://blueprint.hackclub.com/guilds" }
+    ]
+  }
+}

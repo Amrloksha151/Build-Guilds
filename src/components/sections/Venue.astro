@@ -1,0 +1,70 @@
+---
+import Badge from "../ui/Badge.astro";
+import Card from "../ui/Card.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+interface Props {
+  id?: string;
+  title: string;
+  subtitle: string;
+  venueName: string | null;
+  address: string | null;
+  city: string;
+  governorate: string;
+  country: string;
+  mapEmbedUrl: string | null;
+  venueTBALabel: string;
+  addressTBALabel: string;
+  mapPlaceholder: string;
+}
+
+const {
+  id = "venue",
+  title,
+  subtitle,
+  venueName,
+  address,
+  city,
+  governorate,
+  country,
+  mapEmbedUrl,
+  venueTBALabel,
+  addressTBALabel,
+  mapPlaceholder
+} = Astro.props as Props;
+
+const resolvedVenue = venueName ?? venueTBALabel;
+const resolvedAddress = address ?? addressTBALabel;
+---
+
+<section id={id} class="px-4 py-14 md:px-6 md:py-20">
+  <div class="mx-auto w-full max-w-6xl">
+    <SectionHeading title={title} subtitle={subtitle} />
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      <Card>
+        <h3 class="mb-3 text-2xl uppercase text-white">{resolvedVenue}</h3>
+        <p class="mb-4 text-light/90">{resolvedAddress}</p>
+        <p class="mb-5 text-light/90">{city}, {governorate}, {country}</p>
+        {!venueName && <Badge label={venueTBALabel} variant="warning" />}
+      </Card>
+
+      <Card className="min-h-[280px]">
+        {mapEmbedUrl ? (
+          <iframe
+            src={mapEmbedUrl}
+            title="Venue map"
+            class="h-full min-h-[280px] w-full rounded-xl border border-white/20"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        ) : (
+          <div class="flex h-full min-h-[280px] items-center justify-center rounded-xl border border-dashed border-white/30 bg-darker/50 p-6 text-center text-light/85">
+            {mapPlaceholder}
+          </div>
+        )}
+      </Card>
+    </div>
+  </div>
+</section>

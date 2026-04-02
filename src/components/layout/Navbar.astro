@@ -1,0 +1,38 @@
+---
+interface NavItem {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  eventName: string;
+  navItems: NavItem[];
+}
+
+const { eventName, navItems } = Astro.props as Props;
+---
+
+<nav class="sticky top-0 z-40 border-b border-white/10 bg-darker/85 backdrop-blur">
+  <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+    <a href="https://hackclub.com" class="inline-flex items-center gap-3" aria-label="Hack Club homepage">
+      <img
+        src="https://assets.hackclub.com/flag-orpheus-top.svg"
+        alt="Hack Club"
+        class="h-9 w-auto"
+        loading="eager"
+        decoding="async"
+      />
+      <span class="font-sans text-sm font-bold uppercase tracking-[0.08em] text-white md:text-base">{eventName}</span>
+    </a>
+
+    <ul class="hidden items-center gap-4 md:flex">
+      {navItems.map((item) => (
+        <li>
+          <a href={`#${item.id}`} class="text-sm font-bold uppercase tracking-[0.08em] text-light/90 transition hover:text-warning">
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

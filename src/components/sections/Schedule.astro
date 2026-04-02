@@ -1,0 +1,34 @@
+---
+import Card from "../ui/Card.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import type { ScheduleItem } from "../../types/event";
+
+interface Props {
+  id?: string;
+  schedule: ScheduleItem[];
+  title: string;
+  subtitle: string;
+}
+
+const { id = "schedule", schedule, title, subtitle } = Astro.props as Props;
+---
+
+{schedule.length > 0 && (
+  <section id={id} class="px-4 py-14 md:px-6 md:py-20">
+    <div class="mx-auto w-full max-w-6xl">
+      <SectionHeading title={title} subtitle={subtitle} />
+
+      <div class="space-y-4">
+        {schedule.map((item) => (
+          <Card className="grid gap-3 md:grid-cols-[160px_1fr] md:items-start">
+            <p class="font-sans text-sm font-bold uppercase tracking-[0.1em] text-warning">{item.time}</p>
+            <div>
+              <h3 class="text-2xl uppercase text-white">{item.title}</h3>
+              <p class="mt-2 text-light/90">{item.description}</p>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

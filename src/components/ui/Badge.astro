@@ -1,0 +1,19 @@
+---
+interface Props {
+  label: string;
+  variant?: "warning" | "success" | "danger" | "neutral";
+}
+
+const { label, variant = "neutral" } = Astro.props as Props;
+
+const classesByVariant: Record<string, string> = {
+  warning: "border-warning/60 bg-warning/20 text-warning",
+  success: "border-success/60 bg-success/20 text-success",
+  danger: "border-danger/60 bg-danger/20 text-danger",
+  neutral: "border-white/30 bg-white/10 text-white"
+};
+---
+
+<span class={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] ${classesByVariant[variant]}`}>
+  {label}
+</span>
