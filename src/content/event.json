@@ -13,8 +13,8 @@
       "country": "Egypt",
       "mapEmbedUrl": null
     },
-    "registrationOpen": false,
-    "registrationUrl": null
+    "registrationOpen": true,
+    "registrationUrl": "https://blueprint.hackclub.com/guilds/invite/tanta"
   },
   "navigation": [
     { "id": "about", "label": "About" },
@@ -54,7 +54,7 @@
   },
   "hero": {
     "eyebrow": "Blueprint by Hack Club",
-    "primaryCtaLabel": "Get Notified",
+    "primaryCtaLabel": "Join Now",
     "primaryCtaHref": "#signup",
     "secondaryCtaLabel": "Explore Guild Details",
     "secondaryCtaHref": "#about"
@@ -91,7 +91,7 @@
   "activities": [],
   "defaultActivities": [
     {
-      "icon": "hardware",
+      "icon": "cpu",
       "title": "Hands-On Build Time",
       "description": "Collaborative project sessions focused on hardware prototypes and experiments."
     },
@@ -109,7 +109,11 @@
   "faq": [],
   "signup": {
     "title": "Sign Up To Attend",
-    "description": "Registrations are not open yet. Leave your email to get notified when spots are announced.",
+    "description": "Registrations are live. Use the button below to join the Tanta Build Guild invite flow.",
+    "liveTitle": "Registration Is Live",
+    "liveDescription": "Spots are open now. Continue to the official Build Guild registration invite.",
+    "liveButtonLabel": "Open Registration",
+    "invalidUrlDescription": "Registration link is being updated. Please check back shortly.",
     "notifyTitle": "Get Notified",
     "notifyDescription": "This is a static placeholder for now. Replace with your external form link when registration opens.",
     "buttonLabel": "Notify Me",

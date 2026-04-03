@@ -96,6 +96,10 @@ export interface EventContent {
   signup: {
     title: string;
     description: string;
+    liveTitle: string;
+    liveDescription: string;
+    liveButtonLabel: string;
+    invalidUrlDescription: string;
     notifyTitle: string;
     notifyDescription: string;
     buttonLabel: string;

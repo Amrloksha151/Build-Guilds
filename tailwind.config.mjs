@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        dark: "var(--bp-dark)",
-        darker: "var(--bp-darker)",
-        light: "var(--bp-light)",
-        danger: "var(--bp-danger)",
-        warning: "var(--bp-warning)",
-        success: "var(--bp-success)"
+        dark: "rgb(var(--bp-dark-rgb) / <alpha-value>)",
+        darker: "rgb(var(--bp-darker-rgb) / <alpha-value>)",
+        light: "rgb(var(--bp-light-rgb) / <alpha-value>)",
+        danger: "rgb(var(--bp-danger-rgb) / <alpha-value>)",
+        warning: "rgb(var(--bp-warning-rgb) / <alpha-value>)",
+        success: "rgb(var(--bp-success-rgb) / <alpha-value>)"
       },
       fontFamily: {
         display: ['"RC Guidelines"', "sans-serif"],

@@ -61,12 +61,30 @@
 }
 
 :root {
+	--bp-scroll-offset: 5rem;
 	--bp-dark: #0e305b;
 	--bp-darker: #081c35;
 	--bp-light: #dbe4ee;
 	--bp-danger: #fe8e86;
 	--bp-warning: #ffc857;
 	--bp-success: #a8f0ae;
+	--bp-dark-rgb: 14 48 91;
+	--bp-darker-rgb: 8 28 53;
+	--bp-light-rgb: 219 228 238;
+	--bp-danger-rgb: 254 142 134;
+	--bp-warning-rgb: 255 200 87;
+	--bp-success-rgb: 168 240 174;
+	--color-dark: rgb(var(--bp-dark-rgb));
+	--color-darker: rgb(var(--bp-darker-rgb));
+	--color-light: rgb(var(--bp-light-rgb));
+	--color-danger: rgb(var(--bp-danger-rgb));
+	--color-warning: rgb(var(--bp-warning-rgb));
+	--color-success: rgb(var(--bp-success-rgb));
+	--font-display: "RC Guidelines", sans-serif;
+	--font-display-dark: "RC Guidelines Dark", sans-serif;
+	--font-display-light: "RC Guidelines Light", sans-serif;
+	--font-display-empty: "RC Guidelines Empty", sans-serif;
+	--font-sans: "Phantom Sans", system-ui, sans-serif;
 }
 
 @layer base {
@@ -74,6 +92,14 @@
 	body {
 		margin: 0;
 		min-height: 100%;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	section[id] {
+		scroll-margin-top: var(--bp-scroll-offset);
 	}
 
 	body {
@@ -99,6 +125,32 @@
 		font-family: "RC Guidelines Dark", sans-serif;
 		letter-spacing: 0.03em;
 	}
+
+	p,
+	li,
+	label,
+	input,
+	textarea,
+	select {
+		color: rgb(var(--bp-light-rgb) / 1);
+	}
+
+	input,
+	textarea,
+	select {
+		font-family: "Phantom Sans", system-ui, sans-serif;
+	}
+
+	input::placeholder,
+	textarea::placeholder {
+		color: rgb(var(--bp-light-rgb) / 0.78);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }
 
 .blueprint-card {
@@ -109,4 +161,12 @@
 .blueprint-divider {
 	border: 0;
 	border-top: 1px dashed rgba(255, 255, 255, 0.28);
+}
+
+.text-bp-muted {
+	color: rgb(var(--bp-light-rgb) / 0.9);
+}
+
+.text-bp-subtle {
+	color: rgb(var(--bp-light-rgb) / 0.82);
 }

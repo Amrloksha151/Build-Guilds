@@ -9,6 +9,10 @@ interface Props {
   registrationUrl: string | null;
   title: string;
   description: string;
+  liveTitle: string;
+  liveDescription: string;
+  liveButtonLabel: string;
+  invalidUrlDescription: string;
   notifyTitle: string;
   notifyDescription: string;
   buttonLabel: string;
@@ -21,11 +25,28 @@ const {
   registrationUrl,
   title,
   description,
+  liveTitle,
+  liveDescription,
+  liveButtonLabel,
+  invalidUrlDescription,
   notifyTitle,
   notifyDescription,
   buttonLabel,
   placeholder
 } = Astro.props as Props;
+
+const hasValidRegistrationUrl = (() => {
+  if (!registrationUrl) {
+    return false;
+  }
+
+  try {
+    const parsed = new URL(registrationUrl);
+    return parsed.protocol === "https:";
+  } catch {
+    return false;
+  }
+})();
 ---
 
 <section id={id} class="px-4 py-14 md:px-6 md:py-20">
@@ -33,25 +54,33 @@ const {
     <SectionHeading title={title} subtitle={description} />
 
     <Card className="max-w-2xl">
-      {registrationOpen && registrationUrl ? (
+      {registrationOpen && hasValidRegistrationUrl ? (
         <div class="space-y-4">
-          <p class="text-light/90">Registration is live. Continue to the external form.</p>
-          <Button href={registrationUrl} size="lg">Open Registration</Button>
+          <h3 class="text-2xl uppercase text-white">{liveTitle}</h3>
+          <p class="text-bp-muted">{liveDescription}</p>
+          <Button href={registrationUrl!} size="lg" target="_blank" rel="noopener noreferrer">
+            {liveButtonLabel}
+          </Button>
+        </div>
+      ) : registrationOpen ? (
+        <div class="space-y-4">
+          <h3 class="text-2xl uppercase text-white">{liveTitle}</h3>
+          <p class="text-bp-muted">{invalidUrlDescription}</p>
         </div>
       ) : (
         <div class="space-y-4">
           <h3 class="text-2xl uppercase text-white">{notifyTitle}</h3>
-          <p class="text-light/90">{notifyDescription}</p>
+          <p class="text-bp-muted">{notifyDescription}</p>
           <div class="flex flex-col gap-3 sm:flex-row">
             <input
               type="email"
               placeholder={placeholder}
-              class="w-full rounded-full border border-white/30 bg-darker px-5 py-3 text-white placeholder:text-light/60 focus:border-warning focus:outline-none"
+              class="w-full rounded-full border border-white/40 bg-[rgb(var(--bp-darker-rgb))] px-5 py-3 text-white placeholder:text-[rgb(var(--bp-light-rgb)/0.82)] focus:border-[rgb(var(--bp-warning-rgb))] focus:outline-none"
               aria-label="Email address"
             />
             <Button type="button" size="lg">{buttonLabel}</Button>
           </div>
-          <p class="text-xs text-light/70">Static marketing mode: connect this field to your preferred external form when ready.</p>
+          <p class="text-bp-subtle text-xs">Static marketing mode: connect this field to your preferred external form when ready.</p>
         </div>
       )}
     </Card>

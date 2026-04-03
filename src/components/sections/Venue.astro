@@ -44,8 +44,8 @@ const resolvedAddress = address ?? addressTBALabel;
     <div class="grid gap-6 lg:grid-cols-2">
       <Card>
         <h3 class="mb-3 text-2xl uppercase text-white">{resolvedVenue}</h3>
-        <p class="mb-4 text-light/90">{resolvedAddress}</p>
-        <p class="mb-5 text-light/90">{city}, {governorate}, {country}</p>
+        <p class="text-bp-muted mb-4">{resolvedAddress}</p>
+        <p class="text-bp-muted mb-5">{city}, {governorate}, {country}</p>
         {!venueName && <Badge label={venueTBALabel} variant="warning" />}
       </Card>
 
@@ -60,7 +60,7 @@ const resolvedAddress = address ?? addressTBALabel;
             allowfullscreen
           ></iframe>
         ) : (
-          <div class="flex h-full min-h-[280px] items-center justify-center rounded-xl border border-dashed border-white/30 bg-darker/50 p-6 text-center text-light/85">
+          <div class="text-bp-muted flex h-full min-h-[280px] items-center justify-center rounded-xl border border-dashed border-white/30 bg-[rgb(var(--bp-darker-rgb)/0.6)] p-6 text-center">
             {mapPlaceholder}
           </div>
         )}

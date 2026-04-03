@@ -12,7 +12,7 @@ interface Props {
 const { eventName, navItems } = Astro.props as Props;
 ---
 
-<nav class="sticky top-0 z-40 border-b border-white/10 bg-darker/85 backdrop-blur">
+<nav class="sticky top-0 z-40 border-b border-white/10 bg-[rgb(var(--bp-darker-rgb))]">
   <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
     <a href="https://hackclub.com" class="inline-flex items-center gap-3" aria-label="Hack Club homepage">
       <img
@@ -28,7 +28,7 @@ const { eventName, navItems } = Astro.props as Props;
     <ul class="hidden items-center gap-4 md:flex">
       {navItems.map((item) => (
         <li>
-          <a href={`#${item.id}`} class="text-sm font-bold uppercase tracking-[0.08em] text-light/90 transition hover:text-warning">
+          <a href={`#${item.id}`} class="text-bp-muted text-sm font-bold uppercase tracking-[0.08em] transition hover:text-[rgb(var(--bp-warning-rgb))]">
             {item.label}
           </a>
         </li>
