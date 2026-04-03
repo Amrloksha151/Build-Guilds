@@ -1,5 +1,6 @@
 ---
 import Card from "../ui/Card.astro";
+import Button from "../ui/Button.astro";
 import SectionHeading from "../ui/SectionHeading.astro";
 import GharbiyaSTEMHackClubLogo from "../ui/GharbiyaSTEMHackClubLogo.astro";
 import GharbiyaSTEMRoboClubLogo from "../ui/GharbiyaSTEMRoboClubLogo.astro";
@@ -28,10 +29,26 @@ const { id = "partners", organizers, eyebrow, title, subtitle } = Astro.props as
       {organizers.map((organizer) => (
         <Card>
           <div class="mb-5">
-            {organizer.id === "hackclub-gharbiya" ? <GharbiyaSTEMHackClubLogo /> : <GharbiyaSTEMRoboClubLogo />}
+            {organizer.id === "hackclub-gharbiya" ? (
+              <GharbiyaSTEMHackClubLogo src={organizer.logoAsset} alt={organizer.name} />
+            ) : (
+              <GharbiyaSTEMRoboClubLogo src={organizer.logoAsset} alt={organizer.name} />
+            )}
           </div>
           <h3 class="mb-2 text-2xl uppercase text-white">{organizer.name}</h3>
           <p class="text-light/90">{organizer.description}</p>
+          {organizer.url && (
+            <Button
+              href={organizer.url}
+              variant="outline"
+              size="md"
+              className="mt-5"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Learn more
+            </Button>
+          )}
         </Card>
       ))}
     </div>

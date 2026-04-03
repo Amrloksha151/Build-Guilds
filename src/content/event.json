@@ -76,14 +76,14 @@
       "id": "hackclub-gharbiya",
       "name": "Gharbiya STEM Hack Club",
       "description": "The Hack Club chapter at Gharbiya STEM School co-leading the local guild experience.",
-      "logoAsset": null,
-      "url": null
+      "logoAsset": "https://assets.hackclub.com/flag-standalone.png",
+      "url": "https://gharbiya.hackclub.com"
     },
     {
       "id": "robo-gharbiya",
       "name": "Gharbiya STEM Robo Club",
       "description": "The robotics club at Gharbiya STEM School helping shape activities and logistics.",
-      "logoAsset": null,
+      "logoAsset": "https://cdn.jsdelivr.net/gh/MohammedEbrahimSeada/Robo-Club@main/Logo.png",
       "url": null
     }
   ],
