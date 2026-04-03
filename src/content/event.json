@@ -1,7 +1,7 @@
 {
   "event": {
     "name": "Build Guild Tanta",
-    "tagline": "The local hardware meetup for builders in Tanta.",
+    "tagline": "Build, compete, and connect with hardware builders in Tanta",
     "description": "A one-day Build Guild experience in Tanta where Hack Clubbers meet, build hardware projects, and learn from each other.",
     "date": null,
     "time": null,
@@ -26,25 +26,25 @@
   "sections": {
     "schedule": {
       "title": "Event Timeline",
-      "subtitle": "A simple agenda for the day. Edit entries in event.json whenever details change."
+      "subtitle": "TBD"
     },
     "activities": {
       "title": "What To Expect",
-      "subtitle": "Plan your guild with this section as your editable activity showcase."
+      "subtitle": "Hands-on hardware projects, team challenges, mentorship from experienced organizers, networking with peers, and fun rewards throughout the day"
     },
     "partners": {
       "eyebrow": "Co-Organizers",
       "title": "Built By Local Clubs",
-      "subtitle": "This guild is co-organized by student clubs in Gharbiya STEM School."
+      "subtitle": "This guild is organized by student clubs in Gharbiya STEM School."
     },
     "venue": {
       "title": "Venue",
-      "subtitle": "Location details for Build Guild Tanta.",
+      "subtitle": "Location details for Build Guild Tanta to be announced soon",
       "mapPlaceholder": "Map embed will appear here when venue details are finalized."
     },
     "faq": {
       "title": "FAQ",
-      "subtitle": "Quick answers for attendees and organizers."
+      "subtitle": "Quick answers for attendees."
     },
     "fallbacks": {
       "comingSoon": "Coming Soon",
@@ -61,23 +61,17 @@
   },
   "about": {
     "title": "What Is A Build Guild?",
-    "intro": "Build Guilds are local hardware meetups organized by students, where each city creates its own style of workshops, demos, and project time.",
-    "details": "Our Tanta guild is a collaboration between Gharbiya STEM Hack Club and Gharbiya STEM Robo Club, designed to connect builders across the city and celebrate practical engineering.",
-    "organizerFlowTitle": "How Organizing Works",
-    "organizerSteps": [
-      "Start your guild and coordinate with fellow organizers.",
-      "Pick a date, venue, and format that fits your local community.",
-      "Plan activities, logistics, and safety details.",
-      "Gather attendees and run an unforgettable build day."
+    "intro": "Build Guilds is a worldwide series of student-led hardware meetups powered by Hack Club happening in 180 cities around the globe. For one day, you’ll join other builders to create, experiment, and share ideas—no experience needed, just curiosity and passion.",
+    "details": "Our Tanta guild is organized by Gharbiya STEM Hack Club in collaboration with Gharbiya STEM Robo Club, bringing together students from across the city for a full day of hands-on building, collaboration, and real engineering experience.",
     ]
   },
   "organizers": [
     {
       "id": "hackclub-gharbiya",
       "name": "Gharbiya STEM Hack Club",
-      "description": "The Hack Club chapter at Gharbiya STEM School co-leading the local guild experience.",
+      "description": "The Hack Club chapter at Gharbiya STEM School leads the local guild experience.",
       "logoAsset": null,
-      "url": null
+      "url": "https://gharbiya.hackclub.com/"
     },
     {
       "id": "robo-gharbiya",
@@ -88,7 +82,28 @@
     }
   ],
   "schedule": [],
-  "activities": [],
+  "activities": [
+    {
+    "icon": "trophy",
+    "title": "Explore hardware systems & CAD design",
+    "description": "Tackle hands-on hardware projects and CAD challenges, showcasing your creativity and technical skills."
+  },
+  {
+    "icon": "trophy",
+    "title": "Hacktone & Mini Competitions",
+    "description": "Fast-paced challenges and team competitions with prizes for creativity and skill."
+  },
+  {
+    "icon": "users",
+    "title": "Team Collaboration",
+    "description": "Form teams, brainstorm ideas, and work together on projects throughout the day."
+  },
+  {
+    "icon": "gift",
+    "title": "Fun, Rewards & Free Food",
+    "description": "Enjoy surprises, rewards, and complimentary food while connecting with other builders."
+  }
+],
   "defaultActivities": [
     {
       "icon": "cpu",
@@ -106,12 +121,36 @@
       "description": "Meet other student builders in Tanta and form teams for future projects."
     }
   ],
-  "faq": [],
+  "faq": [
+  {
+    "question": "Who can join the event?",
+    "answer": "TThe event is open to high school students aged 13 to 18."
+  },
+  {
+    "question": "Do I need prior experience?",
+    "answer": "No prior experience is required! Beginners and advanced participants are welcome."
+  },
+  {
+    "question": "Is there a participation fee?",
+    "answer": "No, the event is completely free to attend."
+  },
+  {
+    "question": "Will food and drinks be provided?",
+    "answer": "Yes! Complimentary snacks, drinks, and meals will be available throughout the day."
+  },
+  {
+    "question": "Do I need to bring my own equipment?",
+    "answer": "Participants should bring their own laptops."
+  },
+  {
+    "question": "How can I register?",
+    "answer": "Sign up through our online registration form to secure your spot."
+  }],
   "signup": {
     "title": "Sign Up To Attend",
     "description": "Registrations are live. Use the button below to join the Build Guild Tanta invite flow.",
     "liveTitle": "Registration Is Live",
-    "liveDescription": "Spots are open now. Continue to the official Build Guild registration invite.",
+    "liveDescription": "secure your spot now!",
     "liveButtonLabel": "Open Registration",
     "invalidUrlDescription": "Registration link is being updated. Please check back shortly.",
     "notifyTitle": "Get Notified",
