@@ -1,6 +1,6 @@
 {
   "event": {
-    "name": "Tanta Build Guild",
+    "name": "Build Guild Tanta",
     "tagline": "The local hardware meetup for builders in Tanta.",
     "description": "A one-day Build Guild experience in Tanta where Hack Clubbers meet, build hardware projects, and learn from each other.",
     "date": null,
@@ -39,7 +39,7 @@
     },
     "venue": {
       "title": "Venue",
-      "subtitle": "Location details for Tanta Build Guild.",
+      "subtitle": "Location details for Build Guild Tanta.",
       "mapPlaceholder": "Map embed will appear here when venue details are finalized."
     },
     "faq": {
@@ -109,7 +109,7 @@
   "faq": [],
   "signup": {
     "title": "Sign Up To Attend",
-    "description": "Registrations are live. Use the button below to join the Tanta Build Guild invite flow.",
+    "description": "Registrations are live. Use the button below to join the Build Guild Tanta invite flow.",
     "liveTitle": "Registration Is Live",
     "liveDescription": "Spots are open now. Continue to the official Build Guild registration invite.",
     "liveButtonLabel": "Open Registration",

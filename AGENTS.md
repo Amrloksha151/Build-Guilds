@@ -1,4 +1,4 @@
-# AGENTS.md — Tanta Build Guild Event Site
+# AGENTS.md — Build Guild Tanta Event Site
 > Guidelines for GitHub Copilot and all AI agents working on this codebase.
 > Read this file in full before touching any code.
 
@@ -6,7 +6,7 @@
 
 ## 📌 Project Overview
 
-This is the **Tanta Build Guild** event website — a local hardware meetup organized under
+This is the **Build Guild Tanta** event website — a local hardware meetup organized under
 [Blueprint by Hack Club](https://blueprint.hackclub.com/guilds), taking place in **Tanta, Gharbia, Egypt**.
 
 The event is a partnership between:
@@ -254,7 +254,7 @@ component markup. This is the single source of truth.
 ```jsonc
 {
   "event": {
-    "name": "Tanta Build Guild",
+    "name": "Build Guild Tanta",
     "tagline": "TBD",
     "date": null,              // ISO 8601 string, e.g. "2025-04-15" — null = TBD
     "time": null,              // e.g. "10:00 AM – 6:00 PM EET" — null = TBD

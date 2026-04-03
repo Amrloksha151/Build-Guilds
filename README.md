@@ -1,6 +1,6 @@
-# Tanta Build Guild Website
+# Build Guild Tanta Website
 
-Static marketing site for the Tanta Build Guild event, built with Astro and Tailwind.
+Static marketing site for the Build Guild Tanta event, built with Astro and Tailwind.
 
 ## Stack
 
