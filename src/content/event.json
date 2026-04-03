@@ -63,6 +63,12 @@
     "title": "What Is A Build Guild?",
     "intro": "Build Guilds is a worldwide series of student-led hardware meetups powered by Hack Club happening in 180 cities around the globe. For one day, you’ll join other builders to create, experiment, and share ideas—no experience needed, just curiosity and passion.",
     "details": "Our Tanta guild is organized by Gharbiya STEM Hack Club in collaboration with Gharbiya STEM Robo Club, bringing together students from across the city for a full day of hands-on building, collaboration, and real engineering experience.",
+    "organizerFlowTitle": "Why Join Build Guild Tanta",
+    "organizerSteps": [
+      "Build real hardware projects with guidance from student organizers.",
+      "Join mini challenges, demos, and hands-on team activities.",
+      "Connect with builders across Tanta and expand your network.",
+      "Enjoy a high-energy day of learning, collaboration, and rewards."
     ]
   },
   "organizers": [
@@ -84,7 +90,7 @@
   "schedule": [],
   "activities": [
     {
-    "icon": "trophy",
+    "icon": "cpu",
     "title": "Explore hardware systems & CAD design",
     "description": "Tackle hands-on hardware projects and CAD challenges, showcasing your creativity and technical skills."
   },
@@ -94,12 +100,12 @@
     "description": "Fast-paced challenges and team competitions with prizes for creativity and skill."
   },
   {
-    "icon": "users",
+    "icon": "person",
     "title": "Team Collaboration",
     "description": "Form teams, brainstorm ideas, and work together on projects throughout the day."
   },
   {
-    "icon": "gift",
+    "icon": "flag",
     "title": "Fun, Rewards & Free Food",
     "description": "Enjoy surprises, rewards, and complimentary food while connecting with other builders."
   }
@@ -124,7 +130,7 @@
   "faq": [
   {
     "question": "Who can join the event?",
-    "answer": "TThe event is open to high school students aged 13 to 18."
+    "answer": "The event is open to high school students aged 13 to 18."
   },
   {
     "question": "Do I need prior experience?",
