@@ -3,7 +3,7 @@
 
 @font-face {
 	font-family: "RC Guidelines";
-	src: local("R&C Guidelines"), url("/fonts/R&C-Demo.otf") format("opentype");
+	src: local("R&C Guidelines"), url("../fonts/R&C-Demo.otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
 	font-family: "RC Guidelines Dark";
-	src: local("R&C Guidelines"), url("/fonts/R&C-Demo.otf") format("opentype");
+	src: local("R&C Guidelines"), url("../fonts/R&C-Demo.otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -19,7 +19,7 @@
 
 @font-face {
 	font-family: "RC Guidelines Light";
-	src: local("R&C Guidelines"), url("/fonts/R&C-Demo.otf") format("opentype");
+	src: local("R&C Guidelines"), url("../fonts/R&C-Demo.otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -27,7 +27,7 @@
 
 @font-face {
 	font-family: "RC Guidelines Empty";
-	src: local("R&C Guidelines"), url("/fonts/R&C-Demo.otf") format("opentype");
+	src: local("R&C Guidelines"), url("../fonts/R&C-Demo.otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;

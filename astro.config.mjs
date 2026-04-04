@@ -7,6 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   output: 'static',
   vite: {
+    base: './',
     plugins: [tailwindcss()]
   }
 });
